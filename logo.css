@@ -1,44 +1,22 @@
-.overlay {
+.middle {
+    z-index: 11;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 50px;
-    z-index: 2; /* Coloca o conteúdo sobreposto acima das estrelas */
+    top: 5%;
+    left: 35%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: slideDown 1s ease forwards;
 }
 
-
-
-.logo img {
-    z-index: 3;
-    display: inline-block;
-    width: 450px;
-    height: auto;
-}
-
-.element_base {
-    position: relative;
-}
-
-#center {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    transform-origin: center center; /* Define o ponto de origem da rotação */
-    animation: rotate 5s linear infinite; /* Nome da animação, duração, tipo de interpolação e repetição */
-    
-}
-
-@keyframes rotate {
+@keyframes slideDown {
     0% {
-        transform: rotate(0deg); /* Ângulo inicial de rotação */
+        top: -100px; /* Posição inicial */
+        opacity: 0;
+        left: 50%;
     }
     100% {
-        transform: rotate(360deg); /* Ângulo final de rotação (uma volta completa) */
+        top: 5%; /* Posição final no centro da tela */
+        opacity: 1;
+        left: 50%;
     }
 }

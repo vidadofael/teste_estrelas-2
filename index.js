@@ -1,4 +1,4 @@
-const numStars = 1000; // Número de estrelas
+const numStars = 500; // Número de estrelas
 const container = document.getElementById("bolhas");
 const fragment = document.createDocumentFragment(); // Criação do fragmento
 
