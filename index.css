@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at center, #071d42 0%, black 100%);
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bolhas {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.bolhas span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #249cd826, 0 0 10px #4f97d6, 0 0 20px #4a6177b0;
+}
+
+.bolhas span.pulse {
+    animation: pulse 3s ease-in-out infinite alternate;
+    animation-delay: var(--delay);
+}
+
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.1);
+    }
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Coloca o conteúdo sobreposto acima das estrelas */
+}
+
+.overlay a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
